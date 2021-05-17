@@ -1,0 +1,44 @@
+html {
+  text-size-adjust: none;
+}
+
+div {
+  font-size: 10px;
+}
+
+.hightlight {
+  animation: 1s blink 3 steps(1);
+}
+
+@keyframes blink {
+  50% {
+    color: transparent;
+  }
+}
+
+@keyframes typing {
+  from {width: 0;}
+}
+
+@keyframes caret {
+  50% {
+    border-right: transparent;
+  }
+}
+
+a {
+  text-decoration: underline;
+}
+
+h1 {
+  width: 7em;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing 3s steps(14), caret 1s steps(1) infinite;
+  border-right: 0.05em solid;
+  color: #000;
+}
+
+body {
+  background-color: #ccc;
+}

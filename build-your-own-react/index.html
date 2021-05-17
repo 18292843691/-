@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    #test {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      animation: roate 1s infinite;
+      transform-origin: right top;
+    }
+
+    .card {
+      width: 100px;
+    }
+
+    .card.card_news {
+      width: 300px;
+    }
+
+    .card_news.card {
+      width: 400px;
+    }
+
+    .a {
+      color: red;
+    }
+
+    .b {
+      color: blue;
+    }
+
+    .a.b {
+      color: orange;
+    }
+
+    .b.a {
+      color: yellow;
+    }
+
+    @keyframes roate {
+      0% {
+        transform: rotate(0);
+      }
+
+      100% {
+        transform:  rotate(365deg);
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- <div id="test"></div> -->
+  <!-- <div class="card">1</div> -->
+  <!-- <div class="card card_news">2</div> -->
+  <!-- <div class="card_news">3</div> -->
+  <!-- <div class="card_news card">4</div> -->
+
+  <!-- <div class="a">text</div> -->
+  <!-- <div class="b">text</div> -->
+  <!-- <div class="a b">text</div> -->
+  <!-- <div class="b a">text</div> -->
+
+  <div id="root"></div>
+
+  <!-- <script src="./index.js"></script> -->
+  <!-- <script src="./build_0.js"></script> -->
+  <!-- <script src="./build_1.js"></script> -->
+  <!-- <script src="./build_2.js"></script> -->
+  <script src="./build_4.js"></script>
+  <!-- <script src="./build_4.js"></script> -->
+  <!-- <script src="./build_5.js"></script> -->
+</body>
+</html>

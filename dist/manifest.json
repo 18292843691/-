@@ -1,0 +1,11 @@
+{
+  "index.js": "autoindex.bundle.21ea992e99bb7b521fe8.js",
+  "runtime.js": "autoruntime.bundle.e3610f493e5075719e35.js",
+  "workbox-994aa968.js.map": "autoworkbox-994aa968.js.map",
+  "workbox-994aa968.js": "autoworkbox-994aa968.js",
+  "index.html": "autoindex.html",
+  "service-worker.js.map": "autoservice-worker.js.map",
+  "service-worker.js": "autoservice-worker.js",
+  "index.bundle.js.map": "autoindex.bundle.21ea992e99bb7b521fe8.js.map",
+  "runtime.bundle.js.map": "autoruntime.bundle.e3610f493e5075719e35.js.map"
+}

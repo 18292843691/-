@@ -1,0 +1,70 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta http-equiv="X-UA-Compatible" content="ie=edge"/><title>index</title><link rel="stylesheet" href="https://static.ixiaochuan.cn/matuan/_next/static/css/styles.8536a7a1.chunk.css"><link rel="stylesheet" media="print" onload="this.media='all'" href="https://static.ixiaochuan.cn/matuan/_next/static/chunks/pages/_app.d3df7562.chunk.css"><link rel="preload" as="style" rel="stylesheet" href="https://static.ixiaochuan.cn/matuan/_next/static/chunks/pages/index.31a773da.chunk.css"><meta http-equiv="Content-Security-Policy"><style>h1 {
+        color: blue;
+      }</style><script defer="defer" src="runtime.bundle.e3610f493e5075719e35.js"></script><script defer="defer" src="index.bundle.21ea992e99bb7b521fe8.js"></script></head><body><div class="hightlight">123346</div><a href="#">aaaaaaaaaaaaa</a><h1>asdfghjkl</h1><noscript id="deferred-styles"></noscript><progress value="20" max="100"></progress><script>var loadDeferredStyles = function() {
+        console.log('loadDeferredStyles')
+        var addStylesNode = document.getElementById("deferred-styles");
+        var replacement = document.createElement("div");
+        replacement.innerHTML = addStylesNode.textContent;
+        document.body.appendChild(replacement)
+        addStylesNode.parentElement.removeChild(addStylesNode);
+      };
+      // var raf = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
+      //     window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+      // if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
+      // else window.addEventListener('load', loadDeferredStyles);
+
+      window.setTimeout(loadDeferredStyles, 1000);</script><script>// window.onload = () => {
+      //   console.log("window.onload", window.performance.now());
+      // };
+
+      // document.addEventListener("DOMContentLoaded", function () {
+      //   console.log("DOMContentLoaded", window.performance.now());
+      // });
+      const getTiming = () => {
+        if (!window.performance) {
+          // 当前浏览器不支持
+          console.log(
+            "你的浏览器不支持 performance 接口\nUA：",
+            window.navigator.userAgent
+          );
+          return;
+        }
+
+        const timing = Object.create(null);
+
+        try {
+          const time = window.performance.timing;
+
+          timing["重定向时间"] = time.redirectEnd - time.redirectStart;
+          timing["DNS解析时间"] = time.domainLookupEnd - time.domainLookupStart;
+          timing["TCP完成握手时间"] = time.connectEnd - time.connectStart;
+          timing["HTTP请求响应完成时间"] = time.responseEnd - time.requestStart;
+          timing["DOM开始加载前所花费时间"] =
+            time.responseEnd - time.navigationStart;
+          timing["DOM加载完成时间"] = time.domComplete - time.domLoading;
+          timing["DOM结构解析完成时间"] = time.domInteractive - time.domLoading;
+          timing["脚本加载时间"] =
+            time.domContentLoadedEventEnd - time.domContentLoadedEventStart;
+          timing["onload事件时间"] = time.loadEventEnd - time.loadEventStart;
+          timing["页面完全加载时间"] =
+            timing["重定向时间"] +
+            timing["DNS解析时间"] +
+            timing["TCP完成握手时间"] +
+            timing["HTTP请求响应完成时间"] +
+            timing["DOM结构解析完成时间"] +
+            timing["DOM加载完成时间"];
+
+          for (const item in timing) {
+            if (Object.prototype.hasOwnProperty.call(timing, item)) {
+              console.log(`${item}:${timing[item]}毫秒(ms)`);
+            }
+          }
+
+          console.log(window.performance.timing);
+        } catch (e) {
+          console.log(timing);
+          console.log(window.performance.timing);
+        }
+      };
+
+      // getTiming()</script></body></html>

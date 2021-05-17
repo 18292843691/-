@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>index</title>
+
+    <!-- <link rel="stylesheet" href="/index.css" /> -->
+    <!-- <link rel="stylesheet" href="./flex.css" /> -->
+    <!-- <link
+      rel="stylesheet"
+      href="https://static.ixiaochuan.cn/matuan/_next/static/css/styles.8536a7a1.chunk.css"
+    />
+    <link
+      rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
+      href="https://static.ixiaochuan.cn/matuan/_next/static/chunks/pages/_app.d3df7562.chunk.css"
+    />
+    <link
+      rel="preload"
+      as="style"
+      rel="stylesheet"
+      href="https://static.ixiaochuan.cn/matuan/_next/static/chunks/pages/index.31a773da.chunk.css"
+    /> -->
+    <meta http-equiv="Content-Security-Policy" />
+    <!-- <script src="https://unpkg.com/video.js@7.0.0/dist/video.min.js"></script> -->
+    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/ramda/0.26.0/ramda.min.js"></script> -->
+    <style>
+      h1 {
+        color: blue;
+      }
+
+      .flex {
+        display: flex;
+        flex-direction: column;
+        height: 500px;
+      }
+
+      .item {
+        width: 100px;
+        height: 80px;
+        background-color: red;
+      }
+
+      .b {
+        /* 占据flex主轴的大小 */
+        flex-basis: 80%;
+      }
+
+      .a {
+        flex-grow: 1;
+      }
+
+      .c {
+        flex-shrink: 0;
+        margin-top: auto;
+        margin-bottom: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex">
+      <div class="item a">a</div>
+      <div class="item b">b</div>
+      <div class="item c">c</div>
+    </div>
+
+    <div class="flexWrap">
+      <div class="item">flex</div>
+      <div class="item">flex</div>
+      <div class="item">flex</div>
+    </div>
+
+    <div class="flexWrap">
+      <div class="normal">flex</div>
+
+      <div class="item flex-g-1">flex-g-1</div>
+      <div class="item flex-g-2">flex-g-2</div>
+      <div class="item flex-g-3">flex-g-3</div>
+    </div>
+
+    <div class="flexWrap">
+      <div class="normal">flex</div>
+
+      <div class="item flex-g-0-1">flex-g-0-1</div>
+      <div class="item flex-g-0-2">flex-g-0-2</div>
+      <div class="item flex-g-0-3">flex-g-0-3</div>
+    </div>
+
+    <div class="flexWrap">
+      <!-- <div class="normal">flex</div> -->
+
+      <div class="item flex-s-1">flex-s-1</div>
+      <div class="item flex-s-2">flex-s-2</div>
+      <div class="item flex-s-3">flex-s-3</div>
+    </div>
+
+    <div class="flexWrap">
+      <!-- <div class="normal">flex</div> -->
+
+      <div class="item flex-s-0-1">flex-s-0-1</div>
+      <div class="item flex-s-0-2">flex-s-0-2</div>
+      <div class="item flex-s-0-3">flex-s-0-3</div>
+    </div>
+
+    <div class="hightlight">123346</div>
+    <a href="#">aaaaaaaaaaaaa</a>
+    <h1>asdfghjkl</h1>
+
+    <!-- <script src="../react/redux.js"></script> -->
+
+    <noscript id="deferred-styles">
+      <!-- <link rel="stylesheet" type="text/css" href="defer.css"/> -->
+    </noscript>
+
+    <!-- <script type="module" src="./promise.js"></script> -->
+    <!-- <script src="./fetchbooks.js"></script> -->
+    <progress value="20" max="100"></progress>
+    <!-- <script src="./proto.js"></script> -->
+
+    <!-- <script crossorigin="anonymous" type="module" src="./entry.mjs"></script> -->
+    <script>
+      var loadDeferredStyles = function () {
+        console.log("loadDeferredStyles");
+        var addStylesNode = document.getElementById("deferred-styles");
+        var replacement = document.createElement("div");
+        replacement.innerHTML = addStylesNode.textContent;
+        document.body.appendChild(replacement);
+        addStylesNode.parentElement.removeChild(addStylesNode);
+      };
+      // var raf = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
+      //     window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+      // if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
+      // else window.addEventListener('load', loadDeferredStyles);
+
+      // window.setTimeout(loadDeferredStyles, 1000);
+    </script>
+    <script>
+      // window.onload = () => {
+      //   console.log("window.onload", window.performance.now());
+      // };
+
+      // document.addEventListener("DOMContentLoaded", function () {
+      //   console.log("DOMContentLoaded", window.performance.now());
+      // });
+      const getTiming = () => {
+        if (!window.performance) {
+          // 当前浏览器不支持
+          console.log(
+            "你的浏览器不支持 performance 接口\nUA：",
+            window.navigator.userAgent
+          );
+          return;
+        }
+
+        const timing = Object.create(null);
+
+        try {
+          const time = window.performance.timing;
+
+          timing["重定向时间"] = time.redirectEnd - time.redirectStart;
+          timing["DNS解析时间"] = time.domainLookupEnd - time.domainLookupStart;
+          timing["TCP完成握手时间"] = time.connectEnd - time.connectStart;
+          timing["HTTP请求响应完成时间"] = time.responseEnd - time.requestStart;
+          timing["DOM开始加载前所花费时间"] =
+            time.responseEnd - time.navigationStart;
+          timing["DOM加载完成时间"] = time.domComplete - time.domLoading;
+          timing["DOM结构解析完成时间"] = time.domInteractive - time.domLoading;
+          timing["脚本加载时间"] =
+            time.domContentLoadedEventEnd - time.domContentLoadedEventStart;
+          timing["onload事件时间"] = time.loadEventEnd - time.loadEventStart;
+          timing["页面完全加载时间"] =
+            timing["重定向时间"] +
+            timing["DNS解析时间"] +
+            timing["TCP完成握手时间"] +
+            timing["HTTP请求响应完成时间"] +
+            timing["DOM结构解析完成时间"] +
+            timing["DOM加载完成时间"];
+
+          for (const item in timing) {
+            if (Object.prototype.hasOwnProperty.call(timing, item)) {
+              console.log(`${item}:${timing[item]}毫秒(ms)`);
+            }
+          }
+
+          console.log(window.performance.timing);
+        } catch (e) {
+          console.log(timing);
+          console.log(window.performance.timing);
+        }
+      };
+
+      const fetch = (data) => {
+        const xhr = new XMLHttpRequest();
+
+        xhr.open("post", "http://localhost:9000/cors");
+
+        xhr.onreadystatechange = (state) => {
+          console.log(state);
+        };
+
+        xhr.setRequestHeader('Content-Type', 'application/json')
+
+        xhr.onload = (load) => {
+          console.log("load", load);
+        };
+
+        xhr.send({data: data});
+      };
+
+      const obj = { a: 1, b: 2, c: "im c" };
+
+      const proxyObj = new Proxy(obj, {
+        defineProperty(value) {
+          console.log("defineProperty", value);
+          return {};
+        },
+        deleteProperty() {
+          console.log("delete");
+        },
+        apply(oTarget, that, args) {
+          console.log("apply call bind");
+        },
+        construct(oTarget, args) {
+          console.log("new construct");
+          var obj = Object.create(base.prototype);
+          this.apply(oTarget, obj, args);
+          return obj;
+        },
+        get(oTarget, prop) {
+          console.log("get", oTarget, prop);
+          return prop in oTarget ? oTarget[prop] : 37;
+        },
+        set(oTarget, prop, value) {
+          console.log("set", oTarget, prop, value);
+          oTarget[prop] = value;
+          return true;
+        },
+        ownKeys: function (oTarget, sKey) {
+          console.log('ownKeys')
+          return oTarget.keys();
+        },
+        enumerate: function (oTarget, sKey) {
+          console.log('enumerate')
+          return oTarget.keys();
+        },
+        has: function (oTarget, sKey) {
+          console.log('has')
+          return sKey in oTarget || oTarget.hasItem(sKey);
+        },
+        getOwnPropertyDescriptor() {
+          console.log("getOwnPropertyDescriptor");
+          return { getOwnPropertyDescriptor: "getOwnPropertyDescriptor" };
+        },
+        getPrototypeOf() {
+          return { getPrototypeOf: "getPrototypeOf" };
+        },
+      });
+
+      Object.defineProperty(obj, "a", {
+        // enumerable: false, // 是否可以被 for in / Object.keys() 枚举
+        // value: 3, // 值; 不可与 get / set 同时配置
+        // writable: false, // 是否可写; 不可与 get / set 同时配置
+        // configurable: false,  //  是否可以被删除
+        set(value) {
+          console.log("set", value);
+        },
+        get() {
+          console.log("get");
+          return obj.c;
+        },
+      });
+      // getTiming()
+    </script>
+  </body>
+</html>
